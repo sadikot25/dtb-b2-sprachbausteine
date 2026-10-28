@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachbausteine DTB B2: Cheat Sheet & Drill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f5f0; --card:#ffffff; --ink:#1f2328; --muted:#5d636b; --line:#e3ded3;
+    --accent:#1d5c63; --accent-soft:#e3efef; --good:#2e7d32; --good-soft:#e7f3e8;
+    --bad:#b23b2e; --bad-soft:#f8e7e4; --mark:#fff2c2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#15181c; --card:#1e2227; --ink:#e8e6e1; --muted:#a3a8ae; --line:#30363d;
+      --accent:#6fb8bf; --accent-soft:#203538; --good:#7cc47f; --good-soft:#1f3322;
+      --bad:#e88a7f; --bad-soft:#3a2321; --mark:#4a4220; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+  header{padding:48px 20px 28px;text-align:center}
+  header h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(28px,5vw,42px);margin:0 0 8px;line-height:1.15}
+  header p{color:var(--muted);margin:0 auto;max-width:620px}
+  nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+      display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px}
+  nav a{color:var(--accent);text-decoration:none;font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px}
+  nav a:hover{background:var(--accent-soft)}
+  main{max-width:880px;margin:0 auto;padding:24px 18px 80px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 24px;margin:0 0 22px}
+  h2{font-family:"Source Serif 4",Georgia,serif;font-size:26px;margin:0 0 12px}
+  h3{font-size:17px;margin:22px 0 8px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+  .stat{background:var(--accent-soft);border-radius:10px;padding:14px}
+  .stat b{display:block;font-size:26px;color:var(--accent)}
+  .stat span{font-size:13px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  td em{color:var(--muted)}
+  .ex{list-style:none;padding:0;margin:0}
+  .ex li{padding:8px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;margin:6px 0}
+  mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px;font-weight:600}
+  .tip{background:var(--mark);border-radius:10px;padding:12px 14px;margin:14px 0}
+  .filter{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;margin:6px 0 4px}
+  .plan li{margin:6px 0}
+  /* quiz */
+  .q{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+  .q .tag{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+  .q p{margin:6px 0 12px;font-size:17px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opts button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+  .opts button:hover:not(:disabled){border-color:var(--accent)}
+  .opts button.right{background:var(--good-soft);border-color:var(--good);color:var(--good);font-weight:600}
+  .opts button.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+  .opts button:disabled{cursor:default}
+  .expl{display:none;margin-top:12px;font-size:15px;padding:10px 12px;border-radius:8px;background:var(--accent-soft)}
+  .q.done .expl{display:block}
+  .score{position:sticky;bottom:12px;margin:18px auto 0;width:max-content;background:var(--accent);color:#fff;
+         padding:8px 18px;border-radius:999px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+  .btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin-top:10px}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 40px}
+  @media (max-width:560px){ section{padding:20px 16px} th,td{padding:8px 6px;font-size:14px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sprachbausteine: DTB B2</h1>
+  <p>Cheat sheet and practice drill for Teil 1 (Grammatikwörter) and Teil 2 (feste Ausdrücke). Based on the official telc Übungstest 1 and the Einfach besser! model test.</p>
+</header>
+
+<nav>
+  <a href="#why">Why it matters</a>
+  <a href="#teil1">Teil 1</a>
+  <a href="#teil2">Teil 2</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#plan">Plan</a>
+</nav>
+
+<main>
+<section id="why">
+  <h2>Why it matters</h2>
+  <div class="stats">
+    <div class="stat"><b>12</b><span>gaps (Items 46–57)</span></div>
+    <div class="stat"><b>6 Pkt.</b><span>0.5 per gap, counts toward Schreiben</span></div>
+    <div class="stat"><b>8–10 Min.</b><span>max. time (35 Min. shared with Forumsbeitrag)</span></div>
+    <div class="stat"><b>0</b><span>minus points: never leave a gap blank</span></div>
+  </div>
+  <p>Schreiben needs at least 24 of 60 points (40%) to be compensated by the other skills. Every half point from Sprachbausteine counts. These are the cheapest points in the exam.</p>
+</section>
+
+<section id="teil1">
+  <h2>Teil 1: Grammatikwörter</h2>
+  <p>A letter with 6 gaps and a box of 10 words (4 are traps). Each word can be used only once.</p>
+  <div class="tip"><b>Rule:</b> don't start with the meaning. Look at what comes <b>after</b> the gap.<br><em>Regel: Schau zuerst, was nach der Lücke kommt.</em></div>
+  <table>
+    <thead><tr><th>After the gap</th><th>Word type</th><th>Typical words</th></tr></thead>
+    <tbody>
+      <tr><td>Verb at the <b>end</b> of the clause</td><td>Konjunktion</td><td>da, weil, ob, wann, sobald, seitdem, sodass, obwohl, damit, wenn</td></tr>
+      <tr><td>Verb <b>directly</b> after the gap</td><td>Adverb (Position 1)</td><td>daher, deshalb, trotzdem, außerdem, dafür, seitdem</td></tr>
+      <tr><td>Noun with article (Genitiv)</td><td>Präposition</td><td>aufgrund, wegen, trotz, innerhalb, während</td></tr>
+      <tr><td>Time or date</td><td>Präposition</td><td>bis (heute), seit, ab, zwischen</td></tr>
+      <tr><td>Adjective or adverb</td><td>Verstärkung</td><td>sehr, besonders, zu</td></tr>
+      <tr><td>Verb + preposition in the sentence</td><td>da(r) + Präposition</td><td>bedanken <b>für</b> → dafür · freuen <b>auf / über</b> → darauf / darüber</td></tr>
+      <tr><td>Fixed pair</td><td>Doppelkonjunktion</td><td>sowohl … als auch · weder … noch · entweder … oder · zwar … aber · je … desto</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Real examples from the practice tests</h3>
+  <ul class="ex">
+    <li>Den Eingang hatte man mir auch <mark>sofort</mark> bestätigt.</li>
+    <li><mark>Seitdem</mark> sind fast fünf Wochen vergangen. <em>(verb right after)</em></li>
+    <li>… leider habe ich <mark>bis</mark> heute noch keine Antwort erhalten.</li>
+    <li>… mitteilen, <mark>wann</mark> ich mit einer Antwort rechnen kann. <em>(verb at the end)</em></li>
+    <li>… allein schon <mark>aufgrund</mark> der guten Erreichbarkeit. <em>(Genitiv)</em></li>
+    <li><mark>Daher</mark> möchte ich sicher sein, dass … <em>(verb right after)</em></li>
+    <li><mark>Da</mark> ich aus familiären Gründen nach Lübeck ziehe, … <em>(reason, verb at the end)</em></li>
+    <li>Mein Resturlaub beträgt drei Tage, <mark>sodass</mark> sich der 27.10. ergibt. <em>(result)</em></li>
+    <li>… und es <mark>zusammen</mark> mit meinen Arbeitspapieren zu schicken.</li>
+    <li>Ich habe mich immer <mark>sehr</mark> wohl gefühlt.</li>
+    <li><mark>Dafür</mark> bedanke ich mich herzlich. <em>(bedanken für)</em></li>
+  </ul>
+
+  <h3>Method</h3>
+  <ol>
+    <li>Read the whole letter once (1 minute).</li>
+    <li>Fill the gaps you're sure of first and cross out each word you use.</li>
+    <li>Use the table for the rest. Check: does the verb position fit?</li>
+  </ol>
+</section>
+
+<section id="teil2">
+  <h2>Teil 2: Feste Ausdrücke</h2>
+  <p>A letter with 6 gaps, options a/b/c. Usually all three options are grammatically fine. Only one is the real fixed phrase (Nomen-Verb-Verbindung). <b>The verb or preposition next to the gap decides.</b></p>
+  <input class="filter" id="filter" type="search" placeholder="Search phrases … (z. B. Verfügung, deadline)">
+  <table id="phrases">
+    <thead><tr><th>Ausdruck</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td>einen Auftrag erteilen</td><td>to place an order</td></tr>
+      <tr><td>sich mit jdm. in Verbindung setzen</td><td>to get in touch</td></tr>
+      <tr><td>etw. zur Verfügung stellen</td><td>to provide, make available</td></tr>
+      <tr><td>etw. zur Sprache bringen</td><td>to raise a topic</td></tr>
+      <tr><td>etw. zur Kenntnis nehmen</td><td>to take note of</td></tr>
+      <tr><td>fest zusagen</td><td>to firmly promise</td></tr>
+      <tr><td>ein Versprechen halten</td><td>to keep a promise</td></tr>
+      <tr><td>eine Frist einhalten</td><td>to meet a deadline</td></tr>
+      <tr><td>im Laufe (dieser Woche)</td><td>in the course of (this week)</td></tr>
+      <tr><td>eine Lösung finden</td><td>to find a solution</td></tr>
+      <tr><td>mit etw. rechnen</td><td>to expect</td></tr>
+      <tr><td>Maßnahmen ergreifen / treffen</td><td>to take measures</td></tr>
+      <tr><td>Wert legen auf</td><td>to value, insist on</td></tr>
+      <tr><td>etw. in Rechnung stellen</td><td>to invoice</td></tr>
+      <tr><td>in Frage kommen</td><td>to be an option</td></tr>
+      <tr><td>etw. in Anspruch nehmen</td><td>to make use of</td></tr>
+      <tr><td>Bezug nehmen auf</td><td>to refer to</td></tr>
+      <tr><td>einen Termin vereinbaren</td><td>to arrange an appointment</td></tr>
+      <tr><td>den Leistungsbereich erweitern</td><td>to expand the range of services</td></tr>
+      <tr><td>eine langfristige Zusammenarbeit</td><td>long-term cooperation</td></tr>
+      <tr><td>um Lieferung bitten</td><td>to request delivery</td></tr>
+      <tr><td>die genannten Preise</td><td>the prices mentioned</td></tr>
+    </tbody>
+  </table>
+  <div class="tip"><b>Bonus:</b> these phrases also earn points in your complaint email and Forumsbeitrag. For example: <em>„Wir haben bereits Maßnahmen ergriffen.“</em> · <em>„Bitte setzen Sie sich mit mir in Verbindung.“</em></div>
+</section>
+
+<section id="quiz">
+  <h2>Quiz</h2>
+  <p>Q1 to Q7 are Teil 1 style, Q8 to Q12 are Teil 2 style. Click an answer to see the explanation.</p>
+  <div id="qbox"></div>
+  <button class="btn" id="reset">Start again</button>
+  <div class="score" id="score">0 / 12</div>
+</section>
+
+<section id="plan">
+  <h2>Plan until 13.11.</h2>
+  <ol class="plan">
+    <li><b>This week:</b> learn the phrases from Teil 2, about 5 a day. Write one sentence of your own with each.</li>
+    <li>Do the quiz above until you get 12/12.</li>
+    <li>Redo the Sprachbausteine sections in both practice tests with a 10-minute timer. Say out loud why each answer is right.</li>
+    <li><b>Next week:</b> do full mock letters in the real format.</li>
+  </ol>
+</section>
+</main>
+
+<footer>Made for DTB B2 preparation · Übungsmaterial</footer>
+
+<script>
+const Q = [
+ ["Teil 1","Ich schreibe Ihnen, ___ ich wissen möchte, ob die Stelle noch frei ist.",["weil","deshalb","wegen","trotzdem"],0,"Verb at the END (möchte) = conjunction: <b>weil</b>. deshalb/trotzdem take the verb in Position 2; wegen needs a Genitiv noun."],
+ ["Teil 1","___ der hohen Nachfrage verlängert sich die Lieferzeit um eine Woche.",["Weil","Aufgrund","Daher","Obwohl"],1,"Genitiv noun follows = preposition: <b>aufgrund</b> (because of)."],
+ ["Teil 1","Ich habe mich sehr gut vorbereitet. ___ bin ich etwas nervös.",["Obwohl","Weil","Trotzdem","Damit"],2,"Verb directly after the gap = adverb in Position 1: <b>trotzdem</b> (nevertheless). Contrast in meaning."],
+ ["Teil 1","Könnten Sie mir bitte mitteilen, ___ ich die Unterlagen auch per E-Mail schicken darf?",["dass","wenn","als","ob"],3,"Indirect yes/no question = <b>ob</b> (whether). For W-questions keep the W-word (wann, wo …)."],
+ ["Teil 1","Ich freue mich schon ___, Sie nächste Woche persönlich kennenzulernen.",["darüber","darauf","dafür","damit"],1,"sich freuen <b>auf</b> = looking forward (future) → <b>darauf</b>. freuen über = about something past."],
+ ["Teil 1","Ich habe sowohl im Kundenservice ___ auch in der Buchhaltung gearbeitet.",["wie","und","als","sondern"],2,"Fixed pair: sowohl … <b>als</b> auch (both … and)."],
+ ["Teil 1","Bitte begleichen Sie die Rechnung ___ der nächsten zehn Tage.",["während","innerhalb","seit","bis"],1,"<b>innerhalb</b> + Genitiv = within (deadline). bis takes a point in time: bis Freitag."],
+ ["Teil 2","Bei Fragen können Sie sich jederzeit mit mir in Verbindung ___.",["setzen","stellen","nehmen"],0,"sich mit jdm. in Verbindung <b>setzen</b> = to get in touch."],
+ ["Teil 2","Die gewünschten Unterlagen stellen wir Ihnen gern zur ___.",["Sprache","Verfügung","Kenntnis"],1,"zur <b>Verfügung</b> stellen = to provide. (zur Sprache bringen, zur Kenntnis nehmen)"],
+ ["Teil 2","Leider haben Sie die vereinbarte Lieferfrist nicht ___.",["eingehalten","behalten","unterhalten"],0,"eine Frist <b>einhalten</b> = to meet a deadline."],
+ ["Teil 2","Wir haben bereits Maßnahmen ___, damit so ein Fehler nicht wieder passiert.",["gestellt","ergriffen","gesetzt"],1,"Maßnahmen <b>ergreifen</b> (or treffen) = to take measures."],
+ ["Teil 2","Bei fristgerechter Lieferung können Sie in Zukunft mit weiteren Aufträgen ___.",["zählen","rechnen","profitieren"],1,"mit etw. <b>rechnen</b> = to expect. zählen needs auf, profitieren needs von."]
+];
+let score=0, answered=0;
+const box=document.getElementById('qbox'), sc=document.getElementById('score');
+function render(){
+  score=0; answered=0; box.innerHTML='';
+  Q.forEach((q,i)=>{
+    const d=document.createElement('div'); d.className='q';
+    d.innerHTML=`<div class="tag">${i+1} · ${q[0]}</div><p>${q[1].replace('___','<mark>___</mark>')}</p><div class="opts"></div><div class="expl">${q[4]}</div>`;
+    const o=d.querySelector('.opts');
+    q[2].forEach((t,j)=>{
+      const b=document.createElement('button'); b.textContent=t;
+      b.onclick=()=>{
+        if(d.classList.contains('done')) return;
+        d.classList.add('done'); answered++;
+        if(j===q[3]){ score++; b.classList.add('right'); }
+        else { b.classList.add('wrong'); o.children[q[3]].classList.add('right'); }
+        [...o.children].forEach(x=>x.disabled=true);
+        sc.textContent=`${score} / ${Q.length}`+(answered===Q.length?(score===Q.length?' · Perfekt!':' · Try again'):'');
+      };
+      o.appendChild(b);
+    });
+    box.appendChild(d);
+  });
+  sc.textContent=`0 / ${Q.length}`;
+}
+render();
+document.getElementById('reset').onclick=render;
+document.getElementById('filter').addEventListener('input',e=>{
+  const v=e.target.value.toLowerCase();
+  document.querySelectorAll('#phrases tbody tr').forEach(r=>{
+    r.style.display=r.textContent.toLowerCase().includes(v)?'':'none';
+  });
+});
+</script>
+</body>
+</html>
