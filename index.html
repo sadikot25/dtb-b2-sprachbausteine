@@ -3,234 +3,542 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachbausteine DTB B2: Cheat Sheet & Drill</title>
+<title>Sprachbausteine DTB B2 · Tagesplan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#f7f5f0; --card:#ffffff; --ink:#1f2328; --muted:#5d636b; --line:#e3ded3;
-    --accent:#1d5c63; --accent-soft:#e3efef; --good:#2e7d32; --good-soft:#e7f3e8;
-    --bad:#b23b2e; --bad-soft:#f8e7e4; --mark:#fff2c2;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#15181c; --card:#1e2227; --ink:#e8e6e1; --muted:#a3a8ae; --line:#30363d;
-      --accent:#6fb8bf; --accent-soft:#203538; --good:#7cc47f; --good-soft:#1f3322;
-      --bad:#e88a7f; --bad-soft:#3a2321; --mark:#4a4220; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
-  header{padding:48px 20px 28px;text-align:center}
-  header h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(28px,5vw,42px);margin:0 0 8px;line-height:1.15}
-  header p{color:var(--muted);margin:0 auto;max-width:620px}
-  nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
-      display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px}
-  nav a{color:var(--accent);text-decoration:none;font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px}
-  nav a:hover{background:var(--accent-soft)}
-  main{max-width:880px;margin:0 auto;padding:24px 18px 80px}
-  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 24px;margin:0 0 22px}
-  h2{font-family:"Source Serif 4",Georgia,serif;font-size:26px;margin:0 0 12px}
-  h3{font-size:17px;margin:22px 0 8px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
-  .stat{background:var(--accent-soft);border-radius:10px;padding:14px}
-  .stat b{display:block;font-size:26px;color:var(--accent)}
-  .stat span{font-size:13px;color:var(--muted)}
-  table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
-  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-  td em{color:var(--muted)}
-  .ex{list-style:none;padding:0;margin:0}
-  .ex li{padding:8px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;margin:6px 0}
-  mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px;font-weight:600}
-  .tip{background:var(--mark);border-radius:10px;padding:12px 14px;margin:14px 0}
-  .filter{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;margin:6px 0 4px}
-  .plan li{margin:6px 0}
-  /* quiz */
-  .q{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
-  .q .tag{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
-  .q p{margin:6px 0 12px;font-size:17px}
-  .opts{display:flex;flex-wrap:wrap;gap:8px}
-  .opts button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
-  .opts button:hover:not(:disabled){border-color:var(--accent)}
-  .opts button.right{background:var(--good-soft);border-color:var(--good);color:var(--good);font-weight:600}
-  .opts button.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
-  .opts button:disabled{cursor:default}
-  .expl{display:none;margin-top:12px;font-size:15px;padding:10px 12px;border-radius:8px;background:var(--accent-soft)}
-  .q.done .expl{display:block}
-  .score{position:sticky;bottom:12px;margin:18px auto 0;width:max-content;background:var(--accent);color:#fff;
-         padding:8px 18px;border-radius:999px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.15)}
-  .btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin-top:10px}
-  footer{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 40px}
-  @media (max-width:560px){ section{padding:20px 16px} th,td{padding:8px 6px;font-size:14px} }
+:root{--bg:#f7f5f0;--card:#fff;--ink:#1f2328;--muted:#5d636b;--line:#e3ded3;--accent:#1d5c63;--accent-soft:#e3efef;
+--good:#2e7d32;--good-soft:#e7f3e8;--bad:#b23b2e;--bad-soft:#f8e7e4;--mark:#fff2c2}
+@media (prefers-color-scheme:dark){:root{--bg:#15181c;--card:#1e2227;--ink:#e8e6e1;--muted:#a3a8ae;--line:#30363d;--accent:#6fb8bf;
+--accent-soft:#203538;--good:#7cc47f;--good-soft:#1f3322;--bad:#e88a7f;--bad-soft:#3a2321;--mark:#4a4220}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+header{padding:36px 20px 18px;text-align:center}
+header h1{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(26px,5vw,40px);margin:0 0 6px;line-height:1.15}
+header p{color:var(--muted);margin:0 auto;max-width:640px}
+.countdown{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;font-weight:600;padding:6px 16px;border-radius:999px;font-size:14px}
+main{max-width:920px;margin:0 auto;padding:10px 16px 80px}
+.tabs{display:flex;gap:8px;justify-content:center;margin:8px 0 18px}
+.tabs button{font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:4px 0 6px}
+.progress div{height:100%;background:var(--good);width:0;transition:width .3s}
+.pmeta{font-size:13px;color:var(--muted);text-align:center;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.day{font:inherit;text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px;cursor:pointer;position:relative}
+.day:hover{border-color:var(--accent)}
+.day .n{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.day .d{font-weight:700;font-size:16px}
+.day .f{font-size:13px;color:var(--muted);line-height:1.35;margin-top:4px}
+.day.today{border:2px solid var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.day.done{background:var(--good-soft)}
+.day .badge{position:absolute;top:8px;right:10px;font-size:12px;font-weight:700}
+.day.today .badge{color:var(--accent)} .day.done .badge{color:var(--good)}
+.day.exam{background:var(--mark)}
+section.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 18px}
+h2{font-family:"Source Serif 4",Georgia,serif;font-size:26px;margin:0 0 6px}
+h3{font-size:17px;margin:4px 0 10px}
+.sub{color:var(--muted);margin:0 0 4px}
+.back{font:inherit;color:var(--accent);background:none;border:0;cursor:pointer;font-weight:600;padding:0;margin-bottom:12px}
+.learn ul{margin:6px 0;padding-left:20px} .learn li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+mark{background:var(--mark);color:inherit;padding:0 3px;border-radius:3px;font-weight:600}
+.tip{background:var(--mark);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:15px}
+.q{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.q .tag{font-size:12px;font-weight:700;color:var(--accent)}
+.q p{margin:4px 0 10px;font-size:17px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{font:inherit;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opts button:hover:not(:disabled){border-color:var(--accent)}
+.right{background:var(--good-soft)!important;border-color:var(--good)!important;color:var(--good)!important;font-weight:600}
+.wrong{background:var(--bad-soft)!important;border-color:var(--bad)!important;color:var(--bad)!important}
+.opts button:disabled{cursor:default}
+.expl{display:none;margin-top:10px;font-size:15px;padding:9px 12px;border-radius:8px;background:var(--accent-soft)}
+.q.done .expl{display:block}
+.letter{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px;line-height:2.1;font-size:16px}
+.letter select{font:inherit;font-size:15px;padding:2px 4px;border-radius:6px;border:2px solid var(--accent);background:var(--card);color:var(--ink)}
+.letter select.right,.letter select.wrong{border-width:2px}
+.box{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.box span{border:1px solid var(--line);border-radius:6px;padding:2px 9px;font-size:14px;font-weight:600;background:var(--card)}
+.gapno{font-size:12px;font-weight:700;color:var(--accent);vertical-align:super}
+.g2{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.g2 label{display:block;cursor:pointer;padding:2px 0}
+.btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin:8px 8px 0 0}
+.btn.ghost{background:var(--card);color:var(--accent);border:1px solid var(--accent)}
+.result{font-weight:700;margin-top:10px}
+.mexpl{font-size:14px;margin-top:10px;display:none} .mexpl.show{display:block}
+.mexpl li{margin:3px 0}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent);margin-left:6px}
+.score{position:sticky;bottom:12px;margin:16px auto 0;width:max-content;background:var(--accent);color:#fff;padding:7px 18px;border-radius:999px;font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.flash button{font:inherit;min-height:76px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer;padding:10px}
+.flash button.flip{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.check li{list-style:none;margin:6px 0} .check{padding-left:0}
+.filter{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;margin:6px 0}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 40px}
+@media (max-width:560px){section.card{padding:16px}.letter{padding:12px;line-height:2.2}}
 </style>
 </head>
 <body>
 <header>
-  <h1>Sprachbausteine: DTB B2</h1>
-  <p>Cheat sheet and practice drill for Teil 1 (Grammatikwörter) and Teil 2 (feste Ausdrücke). Based on the official telc Übungstest 1 and the Einfach besser! model test.</p>
+  <h1>Sprachbausteine DTB B2</h1>
+  <p>16-Tage-Plan bis zur Prüfung am 13.11.2026. Wähle das Datum und starte deine Session.</p>
+  <div class="countdown" id="countdown"></div>
 </header>
-
-<nav>
-  <a href="#why">Why it matters</a>
-  <a href="#teil1">Teil 1</a>
-  <a href="#teil2">Teil 2</a>
-  <a href="#quiz">Quiz</a>
-  <a href="#plan">Plan</a>
-</nav>
-
 <main>
-<section id="why">
-  <h2>Why it matters</h2>
-  <div class="stats">
-    <div class="stat"><b>12</b><span>gaps (Items 46–57)</span></div>
-    <div class="stat"><b>6 Pkt.</b><span>0.5 per gap, counts toward Schreiben</span></div>
-    <div class="stat"><b>8–10 Min.</b><span>max. time (35 Min. shared with Forumsbeitrag)</span></div>
-    <div class="stat"><b>0</b><span>minus points: never leave a gap blank</span></div>
-  </div>
-  <p>Schreiben needs at least 24 of 60 points (40%) to be compensated by the other skills. Every half point from Sprachbausteine counts. These are the cheapest points in the exam.</p>
-</section>
-
-<section id="teil1">
-  <h2>Teil 1: Grammatikwörter</h2>
-  <p>A letter with 6 gaps and a box of 10 words (4 are traps). Each word can be used only once.</p>
-  <div class="tip"><b>Rule:</b> don't start with the meaning. Look at what comes <b>after</b> the gap.<br><em>Regel: Schau zuerst, was nach der Lücke kommt.</em></div>
-  <table>
-    <thead><tr><th>After the gap</th><th>Word type</th><th>Typical words</th></tr></thead>
-    <tbody>
-      <tr><td>Verb at the <b>end</b> of the clause</td><td>Konjunktion</td><td>da, weil, ob, wann, sobald, seitdem, sodass, obwohl, damit, wenn</td></tr>
-      <tr><td>Verb <b>directly</b> after the gap</td><td>Adverb (Position 1)</td><td>daher, deshalb, trotzdem, außerdem, dafür, seitdem</td></tr>
-      <tr><td>Noun with article (Genitiv)</td><td>Präposition</td><td>aufgrund, wegen, trotz, innerhalb, während</td></tr>
-      <tr><td>Time or date</td><td>Präposition</td><td>bis (heute), seit, ab, zwischen</td></tr>
-      <tr><td>Adjective or adverb</td><td>Verstärkung</td><td>sehr, besonders, zu</td></tr>
-      <tr><td>Verb + preposition in the sentence</td><td>da(r) + Präposition</td><td>bedanken <b>für</b> → dafür · freuen <b>auf / über</b> → darauf / darüber</td></tr>
-      <tr><td>Fixed pair</td><td>Doppelkonjunktion</td><td>sowohl … als auch · weder … noch · entweder … oder · zwar … aber · je … desto</td></tr>
-    </tbody>
-  </table>
-
-  <h3>Real examples from the practice tests</h3>
-  <ul class="ex">
-    <li>Den Eingang hatte man mir auch <mark>sofort</mark> bestätigt.</li>
-    <li><mark>Seitdem</mark> sind fast fünf Wochen vergangen. <em>(verb right after)</em></li>
-    <li>… leider habe ich <mark>bis</mark> heute noch keine Antwort erhalten.</li>
-    <li>… mitteilen, <mark>wann</mark> ich mit einer Antwort rechnen kann. <em>(verb at the end)</em></li>
-    <li>… allein schon <mark>aufgrund</mark> der guten Erreichbarkeit. <em>(Genitiv)</em></li>
-    <li><mark>Daher</mark> möchte ich sicher sein, dass … <em>(verb right after)</em></li>
-    <li><mark>Da</mark> ich aus familiären Gründen nach Lübeck ziehe, … <em>(reason, verb at the end)</em></li>
-    <li>Mein Resturlaub beträgt drei Tage, <mark>sodass</mark> sich der 27.10. ergibt. <em>(result)</em></li>
-    <li>… und es <mark>zusammen</mark> mit meinen Arbeitspapieren zu schicken.</li>
-    <li>Ich habe mich immer <mark>sehr</mark> wohl gefühlt.</li>
-    <li><mark>Dafür</mark> bedanke ich mich herzlich. <em>(bedanken für)</em></li>
-  </ul>
-
-  <h3>Method</h3>
-  <ol>
-    <li>Read the whole letter once (1 minute).</li>
-    <li>Fill the gaps you're sure of first and cross out each word you use.</li>
-    <li>Use the table for the rest. Check: does the verb position fit?</li>
-  </ol>
-</section>
-
-<section id="teil2">
-  <h2>Teil 2: Feste Ausdrücke</h2>
-  <p>A letter with 6 gaps, options a/b/c. Usually all three options are grammatically fine. Only one is the real fixed phrase (Nomen-Verb-Verbindung). <b>The verb or preposition next to the gap decides.</b></p>
-  <input class="filter" id="filter" type="search" placeholder="Search phrases … (z. B. Verfügung, deadline)">
-  <table id="phrases">
-    <thead><tr><th>Ausdruck</th><th>English</th></tr></thead>
-    <tbody>
-      <tr><td>einen Auftrag erteilen</td><td>to place an order</td></tr>
-      <tr><td>sich mit jdm. in Verbindung setzen</td><td>to get in touch</td></tr>
-      <tr><td>etw. zur Verfügung stellen</td><td>to provide, make available</td></tr>
-      <tr><td>etw. zur Sprache bringen</td><td>to raise a topic</td></tr>
-      <tr><td>etw. zur Kenntnis nehmen</td><td>to take note of</td></tr>
-      <tr><td>fest zusagen</td><td>to firmly promise</td></tr>
-      <tr><td>ein Versprechen halten</td><td>to keep a promise</td></tr>
-      <tr><td>eine Frist einhalten</td><td>to meet a deadline</td></tr>
-      <tr><td>im Laufe (dieser Woche)</td><td>in the course of (this week)</td></tr>
-      <tr><td>eine Lösung finden</td><td>to find a solution</td></tr>
-      <tr><td>mit etw. rechnen</td><td>to expect</td></tr>
-      <tr><td>Maßnahmen ergreifen / treffen</td><td>to take measures</td></tr>
-      <tr><td>Wert legen auf</td><td>to value, insist on</td></tr>
-      <tr><td>etw. in Rechnung stellen</td><td>to invoice</td></tr>
-      <tr><td>in Frage kommen</td><td>to be an option</td></tr>
-      <tr><td>etw. in Anspruch nehmen</td><td>to make use of</td></tr>
-      <tr><td>Bezug nehmen auf</td><td>to refer to</td></tr>
-      <tr><td>einen Termin vereinbaren</td><td>to arrange an appointment</td></tr>
-      <tr><td>den Leistungsbereich erweitern</td><td>to expand the range of services</td></tr>
-      <tr><td>eine langfristige Zusammenarbeit</td><td>long-term cooperation</td></tr>
-      <tr><td>um Lieferung bitten</td><td>to request delivery</td></tr>
-      <tr><td>die genannten Preise</td><td>the prices mentioned</td></tr>
-    </tbody>
-  </table>
-  <div class="tip"><b>Bonus:</b> these phrases also earn points in your complaint email and Forumsbeitrag. For example: <em>„Wir haben bereits Maßnahmen ergriffen.“</em> · <em>„Bitte setzen Sie sich mit mir in Verbindung.“</em></div>
-</section>
-
-<section id="quiz">
-  <h2>Quiz</h2>
-  <p>Q1 to Q7 are Teil 1 style, Q8 to Q12 are Teil 2 style. Click an answer to see the explanation.</p>
-  <div id="qbox"></div>
-  <button class="btn" id="reset">Start again</button>
-  <div class="score" id="score">0 / 12</div>
-</section>
-
-<section id="plan">
-  <h2>Plan until 13.11.</h2>
-  <ol class="plan">
-    <li><b>This week:</b> learn the phrases from Teil 2, about 5 a day. Write one sentence of your own with each.</li>
-    <li>Do the quiz above until you get 12/12.</li>
-    <li>Redo the Sprachbausteine sections in both practice tests with a 10-minute timer. Say out loud why each answer is right.</li>
-    <li><b>Next week:</b> do full mock letters in the real format.</li>
-  </ol>
-</section>
+  <div class="tabs"><button id="tPlan" class="on">Tagesplan</button><button id="tCheat">Spickzettel</button></div>
+  <div id="view"></div>
 </main>
-
-<footer>Made for DTB B2 preparation · Übungsmaterial</footer>
+<footer>DTB B2 Vorbereitung · Fortschritt wird nur in diesem Browser gespeichert.</footer>
 
 <script>
-const Q = [
- ["Teil 1","Ich schreibe Ihnen, ___ ich wissen möchte, ob die Stelle noch frei ist.",["weil","deshalb","wegen","trotzdem"],0,"Verb at the END (möchte) = conjunction: <b>weil</b>. deshalb/trotzdem take the verb in Position 2; wegen needs a Genitiv noun."],
- ["Teil 1","___ der hohen Nachfrage verlängert sich die Lieferzeit um eine Woche.",["Weil","Aufgrund","Daher","Obwohl"],1,"Genitiv noun follows = preposition: <b>aufgrund</b> (because of)."],
- ["Teil 1","Ich habe mich sehr gut vorbereitet. ___ bin ich etwas nervös.",["Obwohl","Weil","Trotzdem","Damit"],2,"Verb directly after the gap = adverb in Position 1: <b>trotzdem</b> (nevertheless). Contrast in meaning."],
- ["Teil 1","Könnten Sie mir bitte mitteilen, ___ ich die Unterlagen auch per E-Mail schicken darf?",["dass","wenn","als","ob"],3,"Indirect yes/no question = <b>ob</b> (whether). For W-questions keep the W-word (wann, wo …)."],
- ["Teil 1","Ich freue mich schon ___, Sie nächste Woche persönlich kennenzulernen.",["darüber","darauf","dafür","damit"],1,"sich freuen <b>auf</b> = looking forward (future) → <b>darauf</b>. freuen über = about something past."],
- ["Teil 1","Ich habe sowohl im Kundenservice ___ auch in der Buchhaltung gearbeitet.",["wie","und","als","sondern"],2,"Fixed pair: sowohl … <b>als</b> auch (both … and)."],
- ["Teil 1","Bitte begleichen Sie die Rechnung ___ der nächsten zehn Tage.",["während","innerhalb","seit","bis"],1,"<b>innerhalb</b> + Genitiv = within (deadline). bis takes a point in time: bis Freitag."],
- ["Teil 2","Bei Fragen können Sie sich jederzeit mit mir in Verbindung ___.",["setzen","stellen","nehmen"],0,"sich mit jdm. in Verbindung <b>setzen</b> = to get in touch."],
- ["Teil 2","Die gewünschten Unterlagen stellen wir Ihnen gern zur ___.",["Sprache","Verfügung","Kenntnis"],1,"zur <b>Verfügung</b> stellen = to provide. (zur Sprache bringen, zur Kenntnis nehmen)"],
- ["Teil 2","Leider haben Sie die vereinbarte Lieferfrist nicht ___.",["eingehalten","behalten","unterhalten"],0,"eine Frist <b>einhalten</b> = to meet a deadline."],
- ["Teil 2","Wir haben bereits Maßnahmen ___, damit so ein Fehler nicht wieder passiert.",["gestellt","ergriffen","gesetzt"],1,"Maßnahmen <b>ergreifen</b> (or treffen) = to take measures."],
- ["Teil 2","Bei fristgerechter Lieferung können Sie in Zukunft mit weiteren Aufträgen ___.",["zählen","rechnen","profitieren"],1,"mit etw. <b>rechnen</b> = to expect. zählen needs auf, profitieren needs von."]
+/* ---------- storage ---------- */
+const KEY='dtb-sb-v1';
+let S={done:{},scores:{},wrong:[]};
+try{const r=localStorage.getItem(KEY); if(r) S=Object.assign(S,JSON.parse(r));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+
+/* ---------- dates ---------- */
+const START=new Date(2026,9,28), EXAM=new Date(2026,10,13);
+const WD=['So','Mo','Di','Mi','Do','Fr','Sa'];
+function dayDate(i){return new Date(2026,9,28+i);}
+function fmt(d){return WD[d.getDay()]+', '+String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.';}
+function todayIdx(){const t=new Date();t.setHours(0,0,0,0);return Math.round((t-START)/864e5);}
+
+/* ---------- content ---------- */
+// MC item: [sentence, options, correctIndex, explanation]
+const DAYS=[
+{focus:'Konjunktion oder Adverb?',min:20,
+learn:`<p><b>Die wichtigste Regel für Teil 1:</b> Schau, wo das Verb steht.<br><em>The most important rule: look where the verb is.</em></p>
+<table><tr><th>Verb steht …</th><th>Wort</th><th>Beispiel</th></tr>
+<tr><td>am <b>Ende</b></td><td>Konjunktion: weil, da, obwohl, damit, sodass, wenn, sobald, nachdem, bevor</td><td>…, <mark>weil</mark> der Lieferant Probleme <b>hat</b>.</td></tr>
+<tr><td><b>direkt nach</b> der Lücke</td><td>Adverb: deshalb, daher, trotzdem, außerdem, dann</td><td><mark>Deshalb</mark> <b>können</b> wir nicht liefern.</td></tr></table>
+<div class="tip">Merksatz: <b>weil = Verb am Ende · deshalb = Verb danach.</b> Same meaning, different word order.</div>`,
+q:[
+['Wir können den Termin nicht einhalten, ___ unser Lieferant Probleme hat.',['weil','deshalb','trotzdem'],0,'Verb am Ende (hat) → Konjunktion <b>weil</b>.'],
+['Unser Lieferant hat Probleme. ___ können wir den Termin nicht einhalten.',['Weil','Deshalb','Obwohl'],1,'Verb direkt nach der Lücke (können) → Adverb <b>deshalb</b>.'],
+['___ ich mehrmals angerufen habe, hat sich niemand gemeldet.',['Obwohl','Trotzdem','Deshalb'],0,'Verb am Ende (habe) + Gegensatz → <b>obwohl</b> (although).'],
+['Ich habe mehrmals angerufen. ___ hat sich niemand gemeldet.',['Obwohl','Trotzdem','Weil'],1,'Verb danach (hat) + Gegensatz → <b>trotzdem</b> (nevertheless).'],
+['Bitte schicken Sie mir die Unterlagen, ___ ich den Antrag rechtzeitig stellen kann.',['damit','deshalb','um'],0,'Ziel + Verb am Ende → <b>damit</b> (so that). <em>um</em> braucht <em>zu</em> + Infinitiv.'],
+['Die Maschine war defekt, ___ die Produktion zwei Tage stillstand.',['sodass','deshalb','damit'],0,'Folge + Verb am Ende (stillstand) → <b>sodass</b>. Mit deshalb: „deshalb stand die Produktion still“.'],
+['___ ich die Ware erhalten habe, melde ich mich bei Ihnen.',['Sobald','Dann','Außerdem'],0,'Verb am Ende (habe) + Zeit → <b>sobald</b> (as soon as).'],
+['Die Lieferung kam zu spät. ___ fehlten zwei Kartons.',['Außerdem','Obwohl','Weil'],0,'Verb danach (fehlten) + zusätzliche Info → <b>außerdem</b> (in addition).']]},
+
+{focus:'Präpositionen: Grund und Zeit',min:20,
+learn:`<p>Wenn nach der Lücke ein <b>Nomen</b> (mit Artikel) kommt und kein Verb, brauchst du eine <b>Präposition</b>.<br><em>Noun after the gap = preposition.</em></p>
+<table><tr><th>Präposition</th><th>Kasus</th><th>Bedeutung</th></tr>
+<tr><td>aufgrund / wegen</td><td>Genitiv</td><td>because of</td></tr>
+<tr><td>trotz</td><td>Genitiv</td><td>despite</td></tr>
+<tr><td>innerhalb</td><td>Genitiv / von</td><td>within</td></tr>
+<tr><td>während</td><td>Genitiv</td><td>during</td></tr>
+<tr><td>seit</td><td>Dativ</td><td>since / for (past → now)</td></tr>
+<tr><td>ab</td><td>Dativ</td><td>from … on (future)</td></tr>
+<tr><td>bis (zum)</td><td></td><td>until</td></tr>
+<tr><td>zwischen</td><td>Dativ</td><td>between</td></tr></table>`,
+q:[
+['___ eines technischen Problems ist unsere Website heute nicht erreichbar.',['Aufgrund','Weil','Da'],0,'Nomen im Genitiv (eines Problems) → <b>aufgrund</b>.'],
+['___ des schlechten Wetters fand das Treffen statt.',['Trotz','Wegen','Während'],0,'Schlechtes Wetter, aber das Treffen fand statt = Gegensatz → <b>trotz</b>.'],
+['Bitte antworten Sie ___ einer Woche.',['innerhalb','seit','bis'],0,'Frist (deadline) → <b>innerhalb</b> einer Woche.'],
+['___ der Besprechung sind die Handys auszuschalten.',['Während','Seit','Innerhalb'],0,'Zeitraum, in dem etwas passiert → <b>während</b> (during).'],
+['Ich warte ___ drei Wochen auf eine Antwort.',['seit','vor','ab'],0,'Begann in der Vergangenheit und dauert noch an → <b>seit</b>.'],
+['Das Angebot gilt nur ___ 30. November.',['bis zum','seit dem','innerhalb'],0,'Endpunkt → <b>bis zum</b> 30. November.'],
+['___ dem 1. Dezember werde ich in Teilzeit arbeiten.',['Ab','Seit','Während'],0,'Startpunkt in der Zukunft (werde) → <b>ab</b>. seit nur für Vergangenheit bis jetzt.'],
+['Die Lieferung erfolgt ___ 8 und 12 Uhr.',['zwischen','von','bis'],0,'<b>zwischen</b> … und … (between … and …).']]},
+
+{focus:'ob, dass, W-Wörter und da(r)-Wörter',min:20,
+learn:`<ul>
+<li><b>ob</b> = indirekte Ja/Nein-Frage: <em>Ich möchte wissen, <mark>ob</mark> die Stelle frei ist.</em></li>
+<li><b>W-Wort</b> bleibt: <em>…, <mark>wann</mark> ich mit einer Antwort rechnen kann.</em></li>
+<li><b>dass</b> = Aussage/Tatsache: <em>Ich freue mich, <mark>dass</mark> …</em></li>
+</ul>
+<p><b>da(r) + Präposition:</b> Lerne das Verb mit Präposition, dann ist das Wort automatisch klar.</p>
+<table><tr><th>Verb + Präposition</th><th>da-Wort</th></tr>
+<tr><td>sich bedanken für</td><td>dafür</td></tr><tr><td>sich freuen auf (Zukunft)</td><td>darauf</td></tr>
+<tr><td>sich freuen über (schon passiert)</td><td>darüber</td></tr><tr><td>sich kümmern um</td><td>darum</td></tr>
+<tr><td>denken an</td><td>daran</td></tr><tr><td>rechnen mit</td><td>damit</td></tr></table>`,
+q:[
+['Ich möchte wissen, ___ die Stelle noch frei ist.',['ob','dass','wann'],0,'Ja/Nein-Frage („Ist die Stelle frei?“) → <b>ob</b>.'],
+['Können Sie mir sagen, ___ ich mit einer Entscheidung rechnen kann: noch diese Woche oder erst im Dezember?',['wann','ob','dass'],0,'Frage nach Zeit → <b>wann</b>.'],
+['Ich freue mich, ___ Sie sich für unser Angebot interessieren.',['dass','ob','wann'],0,'Tatsache → <b>dass</b>.'],
+['Sie haben mir sehr geholfen. ___ möchte ich mich herzlich bedanken.',['Dafür','Darauf','Darüber'],0,'sich bedanken <b>für</b> → <b>dafür</b>.'],
+['Wir haben Ihre Beschwerde erhalten und kümmern uns sofort ___.',['darum','dafür','damit'],0,'sich kümmern <b>um</b> → <b>darum</b>.'],
+['Bitte denken Sie ___, die Unterlagen mitzubringen.',['daran','darauf','darüber'],0,'denken <b>an</b> → <b>daran</b>.'],
+['Ich habe mich sehr ___ gefreut, dass Sie mich eingeladen haben.',['darüber','darauf','dafür'],0,'Einladung ist schon passiert → sich freuen <b>über</b> → <b>darüber</b>.'],
+['Leider weiß ich nicht, ___ ich mich wenden soll.',['an wen','ob','dass'],0,'sich wenden <b>an</b> + Person → <b>an wen</b>.']]},
+
+{focus:'Wortpaare + 1. Probetest Teil 1',min:30,
+learn:`<table><tr><th>Paar</th><th>English</th></tr>
+<tr><td>sowohl … als auch</td><td>both … and</td></tr><tr><td>entweder … oder</td><td>either … or</td></tr>
+<tr><td>weder … noch</td><td>neither … nor</td></tr><tr><td>zwar … aber</td><td>admittedly … but</td></tr>
+<tr><td>je … desto</td><td>the more … the more</td></tr><tr><td>nicht nur … sondern auch</td><td>not only … but also</td></tr>
+<tr><td>zu + Adjektiv (…, um zu)</td><td>too …</td></tr><tr><td>Komparativ + als / genauso … wie</td><td>…er than / as … as</td></tr></table>
+<div class="tip">Heute zum ersten Mal: ein ganzer Brief im Prüfungsformat. Stell den Timer auf 10 Minuten.</div>`,
+q:[
+['Ich habe sowohl im Kundenservice ___ auch in der Buchhaltung gearbeitet.',['als','wie','oder'],0,'sowohl … <b>als</b> auch.'],
+['Wir können Ihnen die Ware weder heute ___ morgen liefern.',['noch','oder','und'],0,'weder … <b>noch</b>.'],
+['Sie können ___ per E-Mail oder telefonisch bestellen.',['entweder','weder','sowohl'],0,'<b>entweder</b> … oder.'],
+['Das Produkt ist ___ teuer, aber die Qualität ist sehr gut.',['zwar','weder','sowohl'],0,'<b>zwar</b> … aber.'],
+['___ früher Sie bestellen, desto schneller erhalten Sie die Ware.',['Je','Desto','Wie'],0,'<b>je</b> + Komparativ, desto + Komparativ.'],
+['Die Kiste ist ___ schwer, um sie allein zu tragen.',['zu','sehr','als'],0,'<b>zu</b> + Adjektiv, um … zu = too heavy to …'],
+['Die neue Software ist schneller ___ die alte.',['als','wie','dann'],0,'Komparativ (schneller) + <b>als</b>.'],
+['Die neue Software ist genauso schnell ___ die alte.',['wie','als','so'],0,'genauso … <b>wie</b>.']],
+mock:'m1'},
+
+{focus:'Feste Ausdrücke A',min:20,
+learn:`<p>Teil 2 testet feste Verbindungen. Lerne sie als Block, mit dem Verb.<br><em>Learn them as one block.</em></p>
+<table><tr><th>Ausdruck</th><th>English</th></tr>
+<tr><td>einen Auftrag erteilen</td><td>to place an order</td></tr>
+<tr><td>sich mit jdm. in Verbindung setzen</td><td>to get in touch</td></tr>
+<tr><td>etw. zur Verfügung stellen / zur Verfügung stehen</td><td>to provide / to be available</td></tr>
+<tr><td>etw. zur Sprache bringen</td><td>to raise a topic</td></tr>
+<tr><td>etw. zur Kenntnis nehmen</td><td>to take note of</td></tr></table>`,
+q:[
+['Wir möchten Ihnen hiermit den ___ für die Renovierung unserer Büros erteilen.',['Auftrag','Antrag','Vertrag'],0,'einen <b>Auftrag</b> erteilen. (einen Antrag stellen, einen Vertrag schließen)'],
+['Für Rückfragen stehe ich Ihnen gern zur ___.',['Verfügung','Sprache','Kenntnis'],0,'zur <b>Verfügung</b> stehen = to be available.'],
+['Bitte setzen Sie sich mit unserer Personalabteilung in ___.',['Verbindung','Ordnung','Anspruch'],0,'sich in <b>Verbindung</b> setzen.'],
+['Ich möchte dieses Problem in der nächsten Besprechung zur ___ bringen.',['Sprache','Verfügung','Kenntnis'],0,'zur <b>Sprache</b> bringen = to raise.'],
+['Wir haben Ihre Kündigung zur Kenntnis ___.',['genommen','gebracht','gestellt'],0,'zur Kenntnis <b>nehmen</b>.'],
+['Die Firma ___ allen neuen Mitarbeitern einen Laptop zur Verfügung.',['stellt','bringt','nimmt'],0,'zur Verfügung <b>stellen</b>.'],
+['Wir haben die Firma Weber mit der Reparatur ___.',['beauftragt','erteilt','gestellt'],0,'jdn. mit etw. <b>beauftragen</b> = einen Auftrag erteilen.'],
+['Sollten Sie Fragen haben, ___ Sie sich bitte direkt mit mir in Verbindung.',['setzen','stellen','bringen'],0,'sich in Verbindung <b>setzen</b>.']]},
+
+{focus:'Feste Ausdrücke B',min:20,
+learn:`<table><tr><th>Ausdruck</th><th>English</th></tr>
+<tr><td>(jdm. etw.) fest zusagen</td><td>to firmly promise</td></tr>
+<tr><td>ein Versprechen halten</td><td>to keep a promise</td></tr>
+<tr><td>eine Frist / einen Termin einhalten</td><td>to meet a deadline</td></tr>
+<tr><td>im Laufe (des Tages / der Woche)</td><td>in the course of</td></tr>
+<tr><td>eine Lösung finden</td><td>to find a solution</td></tr></table>
+<div class="tip">Achtung, Falle aus dem Probetest: <b>im Laufe</b> (in the course of) · <b>in Gang</b> kommen (to get started) · <b>im Grunde</b> (basically).</div>`,
+q:[
+['Herr Brandt hat mir ___ zugesagt, dass die Ware am Montag kommt.',['fest','stark','hart'],0,'<b>fest</b> zusagen.'],
+['Leider haben Sie Ihr Versprechen nicht ___.',['gehalten','gemacht','getroffen'],0,'ein Versprechen <b>halten</b>.'],
+['Wir müssen die Frist bis zum 15. Mai unbedingt ___.',['einhalten','aufhalten','enthalten'],0,'eine Frist <b>einhalten</b>.'],
+['Ich melde mich im ___ des Tages bei Ihnen.',['Laufe','Gang','Grunde'],0,'im <b>Laufe</b> des Tages.'],
+['Ich bin sicher, dass wir gemeinsam eine ___ finden.',['Lösung','Ordnung','Verbindung'],0,'eine <b>Lösung</b> finden.'],
+['Das Projekt ist endlich in ___ gekommen.',['Gang','Laufe','Grunde'],0,'in <b>Gang</b> kommen = to get going.'],
+['Im ___ bin ich mit Ihrem Service zufrieden, aber es gibt ein Problem.',['Grunde','Laufe','Gang'],0,'im <b>Grunde</b> = basically.'],
+['Wir konnten den Liefertermin leider nicht ___.',['einhalten','erhalten','behalten'],0,'einen Termin <b>einhalten</b>. (erhalten = receive, behalten = keep)']]},
+
+{focus:'Feste Ausdrücke C + 1. Probetest Teil 2',min:30,
+learn:`<table><tr><th>Ausdruck</th><th>English</th></tr>
+<tr><td>mit etw. rechnen</td><td>to expect</td></tr>
+<tr><td>Maßnahmen ergreifen / treffen</td><td>to take measures</td></tr>
+<tr><td>Wert legen auf</td><td>to value, insist on</td></tr>
+<tr><td>etw. in Rechnung stellen</td><td>to invoice</td></tr>
+<tr><td>in Frage kommen</td><td>to be an option</td></tr></table>
+<div class="tip">Tipp für Teil 2: Oft passen alle drei grammatisch. Die <b>Präposition oder das Verb</b> neben der Lücke entscheidet.</div>`,
+q:[
+['Sie können bis Freitag mit einer Antwort ___.',['rechnen','zählen','warten'],0,'mit etw. <b>rechnen</b> = to expect.'],
+['Wir haben sofort Maßnahmen ___.',['ergriffen','gegriffen','begriffen'],0,'Maßnahmen <b>ergreifen</b>.'],
+['Unser Unternehmen legt großen ___ auf Pünktlichkeit.',['Wert','Preis','Sinn'],0,'<b>Wert</b> legen auf.'],
+['Die Reparatur stellen wir Ihnen nicht in ___.',['Rechnung','Frage','Ordnung'],0,'in <b>Rechnung</b> stellen = to invoice.'],
+['Für die Stelle kommen nur Bewerber mit Berufserfahrung in ___.',['Frage','Ordnung','Rechnung'],0,'in <b>Frage</b> kommen.'],
+['Bitte ___ Sie damit, dass es zu Verspätungen kommen kann.',['rechnen','zählen','hoffen'],0,'<b>rechnen</b> mit → damit rechnen.'],
+['Wir legen Wert ___ eine gute Zusammenarbeit.',['auf','an','für'],0,'Wert legen <b>auf</b>.'],
+['Die Versandkosten werden Ihnen separat in Rechnung ___.',['gestellt','gesetzt','gelegt'],0,'in Rechnung <b>stellen</b>.']],
+mock:'m2b'},
+
+{focus:'Feste Ausdrücke D',min:20,
+learn:`<table><tr><th>Ausdruck</th><th>English</th></tr>
+<tr><td>Bezug nehmen auf / bezugnehmend auf</td><td>to refer to</td></tr>
+<tr><td>einen Termin vereinbaren</td><td>to arrange an appointment</td></tr>
+<tr><td>jdm. Bescheid geben</td><td>to let someone know</td></tr>
+<tr><td>einen Antrag stellen</td><td>to submit an application</td></tr>
+<tr><td>etw. in Anspruch nehmen</td><td>to make use of</td></tr>
+<tr><td>etw. in Kauf nehmen</td><td>to accept (a downside)</td></tr>
+<tr><td>Rücksicht nehmen auf</td><td>to be considerate of</td></tr>
+<tr><td>zu etw. Stellung nehmen</td><td>to comment on</td></tr></table>`,
+q:[
+['___ nehmend auf Ihre E-Mail vom 2. Mai möchte ich Ihnen mitteilen, dass …',['Bezug','Rücksicht','Anspruch'],0,'<b>Bezug</b> nehmend auf = with reference to.'],
+['Ich möchte gern einen Termin mit Ihnen ___.',['vereinbaren','versprechen','verlangen'],0,'einen Termin <b>vereinbaren</b>.'],
+['Bitte geben Sie mir bis Mittwoch ___, ob Sie teilnehmen.',['Bescheid','Wissen','Kenntnis'],0,'<b>Bescheid</b> geben.'],
+['Ich möchte einen ___ auf Elternzeit stellen.',['Antrag','Auftrag','Vertrag'],0,'einen <b>Antrag</b> stellen.'],
+['Sie können unseren kostenlosen Lieferservice in ___ nehmen.',['Anspruch','Kauf','Kenntnis'],0,'in <b>Anspruch</b> nehmen = to use (a service).'],
+['Wir müssen leider eine längere Lieferzeit in ___ nehmen.',['Kauf','Anspruch','Rechnung'],0,'in <b>Kauf</b> nehmen = to accept a disadvantage.'],
+['Bitte nehmen Sie ___ auf die Kollegen, die noch arbeiten.',['Rücksicht','Bezug','Anspruch'],0,'<b>Rücksicht</b> nehmen auf.'],
+['Zu Ihrer Beschwerde möchte ich gern ___ nehmen.',['Stellung','Bezug','Anspruch'],0,'zu etw. <b>Stellung</b> nehmen. (Bezug braucht „auf“)']]},
+
+{focus:'Gemischte Wiederholung + 2. Probetest komplett',min:35,
+learn:`<p>Heute zum ersten Mal Teil 1 <b>und</b> Teil 2 zusammen. Zeitziel: <b>10 Minuten</b> für beide Briefe.</p>
+<div class="tip">Reihenfolge: 1) ganzen Brief lesen (1 Min.) · 2) sichere Lücken zuerst · 3) benutzte Wörter streichen · 4) nie leer lassen.</div>`,
+q:[
+['Ich kann am Montag nicht kommen, ___ ich einen Arzttermin habe.',['da','daher','trotz'],0,'Verb am Ende → <b>da</b> (= weil).'],
+['___ der Bauarbeiten ist der Eingang geschlossen.',['Wegen','Weil','Deshalb'],0,'Nomen im Genitiv → <b>wegen</b>.'],
+['Ich weiß noch nicht, ___ ich am Seminar teilnehmen kann.',['ob','dass','als'],0,'Ja/Nein-Frage → <b>ob</b>.'],
+['Wir legen großen Wert ___ Qualität.',['auf','für','an'],0,'Wert legen <b>auf</b>.'],
+['Wir werden umgehend Maßnahmen ___.',['ergreifen','nehmen','stellen'],0,'Maßnahmen <b>ergreifen</b>.'],
+['Ich nehme ___ auf Ihre Anzeige in der Berliner Zeitung.',['Bezug','Rücksicht','Stellung'],0,'<b>Bezug</b> nehmen auf.'],
+['Der Kunde hat mir den Auftrag ___ zugesagt.',['fest','schwer','hoch'],0,'<b>fest</b> zusagen.'],
+['Sie können sowohl mit Karte ___ auch bar bezahlen.',['als','wie','oder'],0,'sowohl … <b>als</b> auch.']],
+mock:'m3'},
+
+{focus:'3. Probetest komplett',min:25,
+learn:`<p>Thema heute: <b>Rückfragen zur Stellenanzeige</b> und <b>Konferenzraum im Hotel</b>. Genau diese Situationen kommen in der Prüfung (Bewerbung, Anfrage, Angebot).</p>
+<div class="tip">Nach dem Prüfen: Lies jede Erklärung, auch bei richtigen Antworten. Fehler landen automatisch in deiner Fehlerliste für Tag 14.</div>`,
+q:[],mock:'m4'},
+
+{focus:'Offizielle Übungstests wiederholen',min:30,
+learn:`<p>Öffne deine zwei PDFs (telc Übungstest 1 und Einfach besser!). Stell den Timer auf <b>10 Minuten</b>, löse die Sprachbausteine auf Papier und trag deine Antworten unten ein.</p>
+<div class="tip">Ziel: 12/12 in beiden Tests. Sag bei jeder Lücke laut, <b>warum</b> die Antwort richtig ist (Verbposition? Präposition? fester Ausdruck?).</div>`,
+q:[],official:true},
+
+{focus:'4. Probetest komplett',min:25,
+learn:`<p>Thema heute: <b>Antrag auf Homeoffice</b> und <b>Antwort auf eine Beschwerde</b>.</p>
+<div class="tip">Die Ausdrücke aus Teil 2 heute kannst du direkt in deiner E-Mail (Lesen und Schreiben, Aufgabe 21) benutzen: <em>Wir haben Ihre Beschwerde sehr ernst genommen. · Wir erstatten Ihnen die Kosten.</em></div>`,
+q:[],mock:'m5'},
+
+{focus:'5. Probetest komplett',min:25,
+learn:`<p>Thema heute: <b>Nachfrage zur Bewerbung</b> und <b>Catering-Angebot</b>.</p>`,
+q:[],mock:'m6'},
+
+{focus:'Fehler-Wiederholung',min:25,
+learn:`<p>Heute wiederholst du <b>deine eigenen Fehler</b> aus allen bisherigen Tagen, plus 8 neue gemischte Aufgaben.</p>`,
+q:[
+['___ ich Ihre Nachricht erhalten habe, rufe ich Sie zurück.',['Sobald','Seit','Dann'],0,'Verb am Ende + Zeit → <b>sobald</b>.'],
+['Wir konnten nicht liefern, ___ es einen Streik gab.',['weil','wegen','deshalb'],0,'Verb am Ende → <b>weil</b>.'],
+['___ eines Streiks konnten wir nicht liefern.',['Wegen','Weil','Deshalb'],0,'Genitiv-Nomen → <b>wegen</b>.'],
+['Es gab einen Streik. ___ konnten wir nicht liefern.',['Deshalb','Weil','Wegen'],0,'Verb danach → <b>deshalb</b>.'],
+['Bitte teilen Sie uns mit, ___ Sie die Rechnung schon bezahlt haben.',['ob','wenn','als'],0,'Ja/Nein-Frage → <b>ob</b>.'],
+['Wir haben Ihnen den Betrag bereits in Rechnung ___.',['gestellt','gesetzt','gelegt'],0,'in Rechnung <b>stellen</b>.'],
+['Ich nehme ___ auf unser Telefonat von gestern.',['Bezug','Rücksicht','Stellung'],0,'<b>Bezug</b> nehmen auf.'],
+['Bitte ___ Sie die Frist unbedingt ein.',['halten','stellen','setzen'],0,'eine Frist <b>ein·halten</b> (trennbar: Sie halten … ein).']],
+review:true},
+
+{focus:'Generalprobe: letzter Probetest',min:20,
+learn:`<p>Prüfungsbedingungen: Handy weg, Timer <b>10 Minuten</b>, beide Teile ohne Pause.</p>
+<div class="tip">Ziel: mindestens 10 von 12. Unter 9? Dann morgen die Fehlerliste noch einmal durchgehen.</div>`,
+q:[],mock:'m7'},
+
+{focus:'Leichte Wiederholung · keine neuen Inhalte',min:15,
+learn:`<p>Heute nur wiederholen, nichts Neues. Geh die Karteikarten unten durch und lies den Spickzettel einmal. Dann: früh schlafen.</p>`,
+q:[],flash:true}
 ];
-let score=0, answered=0;
-const box=document.getElementById('qbox'), sc=document.getElementById('score');
-function render(){
-  score=0; answered=0; box.innerHTML='';
-  Q.forEach((q,i)=>{
-    const d=document.createElement('div'); d.className='q';
-    d.innerHTML=`<div class="tag">${i+1} · ${q[0]}</div><p>${q[1].replace('___','<mark>___</mark>')}</p><div class="opts"></div><div class="expl">${q[4]}</div>`;
-    const o=d.querySelector('.opts');
-    q[2].forEach((t,j)=>{
-      const b=document.createElement('button'); b.textContent=t;
-      b.onclick=()=>{
-        if(d.classList.contains('done')) return;
-        d.classList.add('done'); answered++;
-        if(j===q[3]){ score++; b.classList.add('right'); }
-        else { b.classList.add('wrong'); o.children[q[3]].classList.add('right'); }
-        [...o.children].forEach(x=>x.disabled=true);
-        sc.textContent=`${score} / ${Q.length}`+(answered===Q.length?(score===Q.length?' · Perfekt!':' · Try again'):'');
-      };
-      o.appendChild(b);
-    });
-    box.appendChild(d);
+
+/* ---------- mock letters ---------- */
+const MOCKS={
+m1:{t1:{title:'Nachfrage zu meiner Bewerbung',
+text:`Sehr geehrte Frau Krüger,<br><br>vor drei Wochen habe ich mich {1} Sachbearbeiterin in Ihrer Buchhaltung beworben. {2} habe ich leider nichts mehr von Ihnen gehört.<br><br>Ich möchte gern wissen, {3} meine Unterlagen vollständig bei Ihnen angekommen sind. Ich hatte Ihnen meinen Lebenslauf {4} mit allen Zeugnissen per E-Mail geschickt.<br><br>Ich frage nach, {5} ich noch ein weiteres Angebot habe und mich bis Ende des Monats entscheiden muss. Eine Stelle in Ihrem Unternehmen interessiert mich jedoch {6}, da ich bereits Erfahrung mit SAP habe.<br><br>Über eine kurze Rückmeldung würde ich mich sehr freuen.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['ALS','BESONDERS','DAMIT','DESHALB','OB','SEITDEM','TROTZ','WEIL','ZUSAMMEN','ZWISCHEN'],
+ans:['a','f','e','i','h','b'],
+ex:['sich <b>als</b> … bewerben (to apply as).','<b>Seitdem</b> + Verb direkt danach (habe).','Ja/Nein-Frage → <b>ob</b>.','<b>zusammen</b> mit (together with).','Verb am Ende (habe) + Grund → <b>weil</b>.','<b>besonders</b> = especially (Adverb vor Komma).']}},
+
+m2b:{t2:{title:'Ihre Anfrage vom 3. November',
+text:`Sehr geehrter Herr Schulz,<br><br>vielen Dank für Ihre Anfrage. Gern {1} Ihnen ein Angebot für 200 Bürostühle. Wie telefonisch besprochen, {2} wir Ihnen einen Rabatt von 5 %.<br><br>Die Lieferung erfolgt {3} von zwei Wochen nach Auftragseingang. Alle Preise {4} die Mehrwertsteuer.<br><br>Sollten Sie Fragen haben, {5} ich Ihnen gern zur Verfügung. Wir würden uns freuen, wenn Sie uns {6}, und hoffen auf eine langfristige Zusammenarbeit.<br><br>Mit freundlichen Grüßen<br>Petra Lindner`,
+opts:[['machen wir','stellen wir','nehmen wir'],['gewähren','erteilen','leisten'],['innerhalb','zwischen','während'],['enthalten','behalten','erhalten'],['stehe','stelle','setze'],['den Auftrag erteilen','eine Bedingung stellen','die Angaben machen']],
+ans:[0,0,0,0,0,0],
+ex:['ein Angebot <b>machen</b> (oder unterbreiten).','einen Rabatt <b>gewähren</b> = to grant a discount.','<b>innerhalb</b> von zwei Wochen.','Preise <b>enthalten</b> die MwSt. (include).','zur Verfügung <b>stehen</b> (ich stehe).','den <b>Auftrag erteilen</b> = to place the order.']}},
+
+m3:{t1:{title:'Ihre Einladung zum Vorstellungsgespräch',
+text:`Sehr geehrter Herr Hoffmann,<br><br>vielen Dank für Ihre Einladung zum Vorstellungsgespräch am 14. November. Ich freue mich sehr {1}, Sie persönlich kennenzulernen.<br><br>Leider habe ich an diesem Tag bereits einen wichtigen Termin, {2} möchte ich Sie fragen, ob eine Verschiebung möglich ist. Ich wäre {3} am 15. als auch am 16. November den ganzen Tag erreichbar.<br><br>Außerdem habe ich noch eine Frage: Soll ich meine Originalzeugnisse mitbringen, {4} reichen die Kopien, die ich Ihnen bereits geschickt habe?<br><br>{5} Sie weitere Unterlagen benötigen, schicke ich sie Ihnen gern {6} per E-Mail.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['ALS','DARAUF','DESHALB','FALLS','OBWOHL','ODER','SOWOHL','VORAB','WEGEN','ZWISCHEN'],
+ans:['b','c','g','f','d','h'],
+ex:['sich freuen <b>auf</b> (Zukunft) → <b>darauf</b>.','Nach Komma, Verb direkt danach (möchte) → <b>deshalb</b>.','<b>sowohl</b> … als auch. „als“ steht schon im Text!','Zwei Möglichkeiten in einer Frage → <b>oder</b>.','Bedingung, Verb am Ende (benötigen) → <b>falls</b> (in case).','<b>vorab</b> = in advance.']},
+t2:{title:'Ihre Bestellung Nr. 4471',
+text:`Sehr geehrte Frau Albers,<br><br>vielen Dank für Ihre Bestellung vom 2. November. Leider müssen wir Ihnen mitteilen, dass sich die Lieferung {1} verzögert. Grund dafür ist ein technischer Defekt in unserem Lager, der {2} behoben wird.<br><br>Wir bedauern die Unannehmlichkeiten sehr und möchten Ihnen als Entschädigung einen Rabatt von 10 % {3}. Selbstverständlich können Sie die Bestellung auch kostenlos {4}, falls Sie nicht so lange warten möchten.<br><br>Bitte {5} uns bis Freitag Bescheid, wie Sie sich entscheiden. Wir hoffen auf Ihr Verständnis und {6} auf eine weitere gute Zusammenarbeit.<br><br>Mit freundlichen Grüßen<br>Jonas Keller`,
+opts:[['um eine Woche','seit einer Woche','vor einer Woche'],['im Laufe dieser Woche','in Gang dieser Woche','im Grunde dieser Woche'],['anbieten','erteilen','einhalten'],['stornieren','reklamieren','bestellen'],['geben Sie','sagen Sie','machen Sie'],['freuen uns','rechnen damit','kümmern uns']],
+ans:[0,0,0,0,0,0],
+ex:['sich <b>um</b> eine Woche verzögern (delay by).','<b>im Laufe</b> dieser Woche.','einen Rabatt <b>anbieten</b>.','eine Bestellung <b>stornieren</b> = to cancel.','Bescheid <b>geben</b>.','sich <b>freuen auf</b>.']}},
+
+m4:{t1:{title:'Rückfrage zur Stellenanzeige „Kaufmännische Assistenz“',
+text:`Sehr geehrte Damen und Herren,<br><br>ich habe Ihre Stellenanzeige auf Ihrer Website gelesen und interessiere mich sehr {1} die Position. {2} ich meine Bewerbung abschicke, habe ich noch einige Fragen.<br><br>In der Anzeige steht, dass die Stelle {3} auf ein Jahr befristet ist. Besteht die Möglichkeit einer Verlängerung? Außerdem möchte ich wissen, {4} viele Stunden pro Woche die Teilzeitstelle umfasst.<br><br>{5} ich zurzeit noch angestellt bin, könnte ich frühestens {6} dem 1. Januar beginnen.<br><br>Vielen Dank im Voraus für Ihre Antwort.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['AB','BEVOR','DA','DAFÜR','FÜR','NACHDEM','SEIT','TROTZDEM','WIE','ZUNÄCHST'],
+ans:['e','b','j','i','c','a'],
+ex:['sich interessieren <b>für</b> + Nomen. „dafür“ nur ohne Nomen danach.','<b>Bevor</b> = before. „Nachdem“ braucht Vergangenheit (abgeschickt habe).','<b>zunächst</b> = initially.','<b>wie</b> viele = how many.','Grund, Verb am Ende (bin) → <b>da</b>.','Start in der Zukunft → <b>ab</b> dem 1. Januar.']},
+t2:{title:'Ihre Anfrage für einen Konferenzraum',
+text:`Sehr geehrte Frau Yilmaz,<br><br>vielen Dank für Ihr Interesse an unserem Hotel. Gern {1} wir Ihnen für den 20. November unseren Konferenzraum „Berlin“ zur Verfügung. Der Raum bietet Platz für bis zu 40 Personen und ist mit modernster Technik {2}.<br><br>Für Ihre Gäste haben wir außerdem 15 Einzelzimmer {3}. Bitte beachten Sie, dass eine kostenlose Stornierung nur bis 14 Tage vor der Veranstaltung {4} ist.<br><br>Damit wir Ihre Buchung verbindlich bestätigen können, {5} wir eine Anzahlung von 30 %. Ich würde mich freuen, Sie bald bei uns {6}.<br><br>Mit freundlichen Grüßen<br>Laura Brenner, Hotel am Park`,
+opts:[['stellen','setzen','legen'],['ausgestattet','ausgestellt','ausgerichtet'],['reserviert','beantragt','verordnet'],['möglich','fähig','gültig'],['benötigen','bedürfen','gebrauchen'],['begrüßen zu dürfen','empfangen zu lassen','willkommen zu machen']],
+ans:[0,0,0,0,0,0],
+ex:['zur Verfügung <b>stellen</b>.','mit Technik <b>ausgestattet</b> = equipped.','Zimmer <b>reservieren</b>.','Stornierung ist <b>möglich</b>.','wir <b>benötigen</b> eine Anzahlung (bedürfen braucht Genitiv).','Sie <b>begrüßen zu dürfen</b> = feste Schlussformel.']}},
+
+m5:{t1:{title:'Antrag auf Homeoffice',
+text:`Sehr geehrte Frau Neumann,<br><br>hiermit stelle ich einen Antrag auf zwei Homeoffice-Tage pro Woche. {1} mein Arbeitsweg {2} meinem Umzug fast zwei Stunden dauert, würde mir das sehr helfen.<br><br>Meine Aufgaben kann ich auch von zu Hause erledigen, {3} ich arbeite hauptsächlich mit SAP und E-Mails. Für Besprechungen bin ich {4} jederzeit im Büro.<br><br>Ich schlage vor, das Modell {5} für drei Monate zu testen. {6} können wir gemeinsam entscheiden, ob es gut funktioniert.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['AB','DA','DANACH','DENN','OBWOHL','SEIT','SELBSTVERSTÄNDLICH','TROTZDEM','ZUNÄCHST','ZWISCHEN'],
+ans:['b','f','d','g','i','c'],
+ex:['Grund, Verb am Ende (dauert) → <b>da</b>.','Vergangenheit bis jetzt → <b>seit</b> meinem Umzug.','<b>denn</b> + normale Wortstellung (ich arbeite). weil hätte das Verb am Ende!','<b>selbstverständlich</b> = of course.','<b>zunächst</b> für drei Monate = initially.','<b>Danach</b> + Verb direkt danach (können).']},
+t2:{title:'Ihre Beschwerde vom 5. November',
+text:`Sehr geehrter Herr Lange,<br><br>vielen Dank für Ihre E-Mail. Es tut uns sehr leid, dass Sie mit unserem Service nicht zufrieden waren. Wir haben Ihre Beschwerde {1}.<br><br>Nach Rücksprache mit unserem Lager hat sich herausgestellt, dass Ihre Bestellung versehentlich an eine falsche Adresse {2}. Selbstverständlich {3} wir Ihnen die Versandkosten. Die richtige Ware ist bereits unterwegs und wird Sie {4} morgen erreichen.<br><br>Um solche Fehler in Zukunft zu vermeiden, haben wir bereits {5}. Wir hoffen, dass Sie uns {6}, und bedanken uns für Ihr Verständnis.<br><br>Mit freundlichen Grüßen<br>Kundenservice Nordwind GmbH`,
+opts:[['sehr ernst genommen','schwer gemacht','stark gehalten'],['geschickt wurde','geschickt hat','schicken wurde'],['erstatten','ersetzen','erhalten'],['voraussichtlich','vorsichtig','vorläufig'],['Maßnahmen ergriffen','Bedingungen gestellt','Angaben gemacht'],['treu bleiben','Bescheid sagen','Wert legen']],
+ans:[0,0,0,0,0,0],
+ex:['etw. <b>ernst nehmen</b> = to take seriously.','Passiv Präteritum: <b>geschickt wurde</b>.','Kosten <b>erstatten</b> = to refund.','<b>voraussichtlich</b> = expected, probably.','<b>Maßnahmen ergreifen</b>.','jdm. <b>treu bleiben</b> = to stay loyal.']}},
+
+m6:{t1:{title:'Meine Bewerbung als Teamassistenz',
+text:`Sehr geehrte Frau Becker,<br><br>am 10. Oktober habe ich Ihnen meine Bewerbungsunterlagen geschickt. Leider habe ich {1} keine Eingangsbestätigung erhalten.<br><br>Könnten Sie mir bitte mitteilen, {2} meine Unterlagen bei Ihnen angekommen sind? {3} etwas fehlt, schicke ich es Ihnen gern noch einmal zu.<br><br>Ich habe {4} meinen Lebenslauf {5} auch meine Arbeitszeugnisse als PDF angehängt.<br><br>Ich interessiere mich sehr für die Stelle, {6} ich gern im Bereich Personal arbeiten möchte.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['ALS','BISHER','DESHALB','FALLS','OB','SEIT','SOWOHL','WEDER','WEIL','WOMIT'],
+ans:['b','e','d','g','a','i'],
+ex:['<b>bisher</b> = so far / until now.','Ja/Nein-Frage → <b>ob</b>.','Bedingung, Verb am Ende (fehlt) → <b>falls</b>.','<b>sowohl</b> … ','… <b>als</b> auch.','Verb am Ende (möchte) → <b>weil</b>. deshalb hätte das Verb direkt danach.']},
+t2:{title:'Angebot für Ihre Weihnachtsfeier',
+text:`Sehr geehrte Frau Schmidt,<br><br>vielen Dank für Ihre Anfrage. {1} Ihrem Wunsch schicken wir Ihnen unser Angebot für ein Buffet für 50 Personen. Das Buffet {2} sowohl vegetarische als auch vegane Gerichte. Getränke sind im Preis nicht {3}.<br><br>Bitte geben Sie uns bis spätestens 1. Dezember {4}, damit wir rechtzeitig planen können. Bei einer Bestellung für mehr als 40 Personen {5} wir Ihnen einen Rabatt von 5 %.<br><br>Wir würden uns freuen, Ihre Feier {6} dürfen.<br><br>Mit freundlichen Grüßen<br>Catering Lindenhof`,
+opts:[['Entsprechend','Wegen','Trotz'],['umfasst','umgibt','umgeht'],['enthalten','behalten','gehalten'],['Bescheid','Auftrag','Antrag'],['gewähren','gewöhnen','gewinnen'],['ausrichten zu','einrichten zu','anrichten zu']],
+ans:[0,0,0,0,0,0],
+ex:['<b>entsprechend</b> + Dativ = according to.','etw. <b>umfasst</b> = includes, comprises.','im Preis <b>enthalten</b> = included.','<b>Bescheid</b> geben.','einen Rabatt <b>gewähren</b>.','eine Feier <b>ausrichten</b> = to host/organise.']}},
+
+m7:{t1:{title:'Vorstellungsgespräch am 3. November',
+text:`Sehr geehrter Herr Wagner,<br><br>{1} vielen Dank für das freundliche Gespräch am 3. November. Sie hatten mir gesagt, dass Sie sich {2} von zwei Wochen bei mir melden.<br><br>{3} sind fast drei Wochen vergangen. {4} möchte ich höflich nachfragen, wie der aktuelle Stand ist.<br><br>Ich bin nach wie vor sehr an der Stelle interessiert, {5} die Aufgaben sehr gut zu meiner Erfahrung passen. Für weitere Fragen stehe ich Ihnen {6} zur Verfügung.<br><br>Mit freundlichen Grüßen<br>Fatema Sadikot`,
+box:['ABER','BIS','DA','DESHALB','GERN','INNERHALB','INZWISCHEN','NOCHMALS','OBWOHL','SEIT'],
+ans:['h','f','g','d','c','e'],
+ex:['<b>Nochmals</b> vielen Dank = thanks again.','<b>innerhalb</b> von zwei Wochen.','<b>Inzwischen</b> + Verb direkt danach (sind) = meanwhile.','<b>Deshalb</b> + Verb direkt danach (möchte). aber würde „aber ich möchte“ brauchen.','Grund, Verb am Ende (passen) → <b>da</b>.','<b>gern</b> zur Verfügung stehen.']},
+t2:{title:'Unsere Bestellung vom 28. Oktober',
+text:`Sehr geehrte Damen und Herren,<br><br>am 28. Oktober haben wir bei Ihnen 50 Druckerpatronen {1}. Laut Ihrer Auftragsbestätigung sollte die Ware spätestens am 5. November {2}.<br><br>Bis heute haben wir die Lieferung jedoch nicht erhalten, obwohl Sie uns den Termin {3} hatten. Da wir die Patronen dringend benötigen, bitten wir Sie, die Ware {4} zu liefern.<br><br>Sollte das nicht möglich sein, sehen wir uns leider gezwungen, {5}. Wir bitten Sie, sich {6} mit uns in Verbindung zu setzen.<br><br>Mit freundlichen Grüßen<br>Büro Hansen & Partner`,
+opts:[['in Auftrag gegeben','in Kauf genommen','in Frage gestellt'],['eintreffen','eintreten','einführen'],['fest zugesagt','fest angenommen','fest gehalten'],['umgehend','umständlich','umfangreich'],['vom Vertrag zurückzutreten','den Vertrag einzuhalten','auf den Vertrag zu zählen'],['schnellstmöglich','höchstwahrscheinlich','möglicherweise']],
+ans:[0,0,0,0,0,0],
+ex:['etw. <b>in Auftrag geben</b> = to order.','Ware <b>trifft ein</b> = arrives.','einen Termin <b>fest zusagen</b>.','<b>umgehend</b> = immediately.','<b>vom Vertrag zurücktreten</b> = to withdraw from the contract.','<b>schnellstmöglich</b> = as soon as possible.']}}
+};
+
+const OFFICIAL=[
+{name:'telc Übungstest 1 (offiziell, 2022)',ans:['h','f','b','i','a','c','b','c','b','c','b','b']},
+{name:'Einfach besser! 400 Übungstest',ans:['b','g','j','f','e','c','a','a','c','b','a','b']}];
+
+const PHRASES=[['einen Auftrag erteilen','to place an order'],['sich in Verbindung setzen','to get in touch'],['zur Verfügung stellen','to provide'],['zur Verfügung stehen','to be available'],['zur Sprache bringen','to raise a topic'],['zur Kenntnis nehmen','to take note of'],['fest zusagen','to firmly promise'],['ein Versprechen halten','to keep a promise'],['eine Frist einhalten','to meet a deadline'],['im Laufe der Woche','in the course of the week'],['in Gang kommen','to get going'],['im Grunde','basically'],['eine Lösung finden','to find a solution'],['mit etw. rechnen','to expect'],['Maßnahmen ergreifen','to take measures'],['Wert legen auf','to value'],['in Rechnung stellen','to invoice'],['in Frage kommen','to be an option'],['Bezug nehmen auf','to refer to'],['einen Termin vereinbaren','to arrange an appointment'],['Bescheid geben','to let know'],['einen Antrag stellen','to apply'],['in Anspruch nehmen','to make use of'],['in Kauf nehmen','to accept a downside'],['Rücksicht nehmen auf','to be considerate'],['Stellung nehmen zu','to comment on'],['einen Rabatt gewähren','to grant a discount'],['Kosten erstatten','to refund costs'],['eine Bestellung stornieren','to cancel an order'],['vom Vertrag zurücktreten','to withdraw from a contract']];
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const view=$('#view');
+const L='abcdefghij';
+function setScore(day,key,val){S.scores[day]=S.scores[day]||{};S.scores[day][key]=val;save();}
+function addWrong(item){if(!S.wrong.some(w=>w.id===item.id)){S.wrong.push(item);save();}}
+
+/* countdown */
+(function(){const t=new Date();t.setHours(0,0,0,0);const d=Math.round((EXAM-t)/864e5);
+$('#countdown').textContent=d>1?`Noch ${d} Tage bis zur Prüfung`:d===1?'Morgen ist Prüfung!':d===0?'Heute ist Prüfung. Viel Erfolg!':'Prüfung vorbei';})();
+
+/* ---------- plan view ---------- */
+function renderPlan(){
+  const ti=todayIdx(); const done=Object.keys(S.done).length;
+  let h=`<div class="progress"><div style="width:${done/DAYS.length*100}%"></div></div><div class="pmeta">${done} von ${DAYS.length} Sessions erledigt</div><div class="grid">`;
+  DAYS.forEach((d,i)=>{
+    const dt=dayDate(i), isT=i===ti, isD=S.done[i];
+    h+=`<button class="day${isT?' today':''}${isD?' done':''}" data-i="${i}"><span class="badge">${isD?'✓ '+(S.done[i].s||''):isT?'HEUTE':''}</span><div class="n">Tag ${i+1}</div><div class="d">${fmt(dt)}</div><div class="f">${d.focus}<br>≈ ${d.min} Min.</div></button>`;
   });
-  sc.textContent=`0 / ${Q.length}`;
+  h+=`<button class="day exam${ti===16?' today':''}" data-i="exam"><span class="badge">${ti===16?'HEUTE':''}</span><div class="n">Prüfung</div><div class="d">${fmt(EXAM)}</div><div class="f">Schriftliche Prüfung · Hartnackschule</div></button></div>`;
+  if(ti>=0&&ti<DAYS.length) h+=`<p style="text-align:center;margin-top:18px"><button class="btn" data-i="${ti}">Heutige Session starten (Tag ${ti+1})</button></p>`;
+  if(S.wrong.length) h+=`<p class="pmeta">Fehlerliste: ${S.wrong.length} Einträge (Tag 14) · <button class="back" id="reset">Fortschritt zurücksetzen</button></p>`;
+  else h+=`<p class="pmeta"><button class="back" id="reset">Fortschritt zurücksetzen</button></p>`;
+  view.innerHTML=h;
+  view.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const v=b.dataset.i; v==='exam'?renderExam():renderDay(+v); scrollTo(0,0); location.hash=v==='exam'?'pruefung':'tag-'+(+v+1);});
+  $('#reset').onclick=()=>{const bx=$('#reset'); if(bx.dataset.c){S={done:{},scores:{},wrong:[]};save();renderPlan();} else {bx.dataset.c=1;bx.textContent='Wirklich alles löschen? Nochmal klicken.';}};
 }
-render();
-document.getElementById('reset').onclick=render;
-document.getElementById('filter').addEventListener('input',e=>{
-  const v=e.target.value.toLowerCase();
-  document.querySelectorAll('#phrases tbody tr').forEach(r=>{
-    r.style.display=r.textContent.toLowerCase().includes(v)?'':'none';
-  });
-});
+
+/* ---------- MC block ---------- */
+function mcBlock(container,items,dayIdx,prefix,onUpdate){
+  let sc=0,ans=0;
+  items.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='q';
+    d.innerHTML=`<div class="tag">${i+1}</div><p>${q[0].replace('___','<mark>___</mark>')}</p><div class="opts"></div><div class="expl">${q[3]}</div>`;
+    const o=d.querySelector('.opts');
+    const order=q[1].map((t,j)=>j).sort(()=>Math.random()-.5);
+    order.forEach(j=>{const b=document.createElement('button');b.textContent=q[1][j];b.dataset.j=j;
+      b.onclick=()=>{if(d.classList.contains('done'))return;d.classList.add('done');ans++;
+        if(j===q[2]){sc++;b.classList.add('right');}
+        else{b.classList.add('wrong');o.querySelector(`[data-j="${q[2]}"]`).classList.add('right');
+          addWrong({id:prefix+'-'+i,type:'mc',q:q,from:dayIdx});}
+        [...o.children].forEach(x=>x.disabled=true);onUpdate(sc,ans,items.length);};
+      o.appendChild(b);});
+    container.appendChild(d);});
+}
+
+/* ---------- mock block ---------- */
+function mockBlock(container,mid,dayIdx,onDone){
+  const m=MOCKS[mid];
+  const wrap=document.createElement('div');
+  let h=`<h3>Probetest <span class="timer" id="tm-${mid}"></span></h3><button class="btn ghost" id="ts-${mid}">⏱ 10-Minuten-Timer starten</button>`;
+  if(m.t1){h+=`<h3 style="margin-top:16px">Teil 1 · Welche Wörter a–j passen? Jedes Wort nur einmal.</h3><div class="box">${m.t1.box.map((w,i)=>`<span>${L[i]} ${w}</span>`).join('')}</div>
+  <div class="letter"><b>Betreff: ${m.t1.title}</b><br><br>${m.t1.text.replace(/\{(\d)\}/g,(x,n)=>`<span class="gapno">${n}</span><select data-t="1" data-g="${n-1}"><option value="">…</option>${m.t1.box.map((w,i)=>`<option value="${L[i]}">${L[i]} ${w}</option>`).join('')}</select>`)}</div>`;}
+  if(m.t2){h+=`<h3 style="margin-top:16px">Teil 2 · Welcher Ausdruck (a, b, c) passt?</h3>
+  <div class="letter"><b>Betreff: ${m.t2.title}</b><br><br>${m.t2.text.replace(/\{(\d)\}/g,(x,n)=>`<span class="gapno">${n}</span><select data-t="2" data-g="${n-1}"><option value="">…</option>${[0,1,2].sort(()=>Math.random()-.5).map((i,pos)=>`<option value="${i}">${'abc'[pos]}) ${m.t2.opts[n-1][i]}</option>`).join('')}</select>`)}</div>`;}
+  h+=`<button class="btn" id="ck-${mid}">Prüfen</button><div class="result" id="rs-${mid}"></div><div class="mexpl" id="ex-${mid}"></div>`;
+  wrap.innerHTML=h;container.appendChild(wrap);
+  let timer=null;
+  wrap.querySelector('#ts-'+mid).onclick=e=>{clearInterval(timer);let t=600;const el=wrap.querySelector('#tm-'+mid);e.target.textContent='⏱ Timer neu starten';
+    const tick=()=>{el.textContent=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');if(t--<=0){clearInterval(timer);el.textContent='Zeit ist um!';}};tick();timer=setInterval(tick,1000);};
+  wrap.querySelector('#ck-'+mid).onclick=()=>{
+    clearInterval(timer);let sc=0,tot=0,ex='<ol>';
+    wrap.querySelectorAll('select').forEach(s=>{
+      const t=s.dataset.t,g=+s.dataset.g,part=t==='1'?m.t1:m.t2;tot++;
+      const correct=t==='1'?part.ans[g]:String(part.ans[g]);
+      const ok=s.value===correct;s.classList.remove('right','wrong');s.classList.add(ok?'right':'wrong');if(ok)sc++;
+      const corrText=t==='1'?correct+' '+part.box[L.indexOf(correct)]:part.opts[g][+correct];
+      if(!ok) addWrong({id:mid+'-'+t+'-'+g,type:'gap',label:`Teil ${t}, Lücke ${g+1} („${part.title}“)`,correct:corrText,ex:part.ex[g],from:dayIdx});
+      ex+=`<li>${ok?'✅':'❌'} <b>Teil ${t}, Lücke ${g+1}:</b> ${corrText} · ${part.ex[g]}</li>`;
+    });
+    ex+='</ol>';
+    wrap.querySelector('#rs-'+mid).textContent=`Ergebnis: ${sc} / ${tot}`+(sc===tot?' · Perfekt!':sc>=tot*0.8?' · Sehr gut!':' · Lies die Erklärungen.');
+    const e=wrap.querySelector('#ex-'+mid);e.innerHTML=ex;e.classList.add('show');onDone(sc,tot);
+  };
+}
+
+/* ---------- day view ---------- */
+function renderDay(i){
+  const d=DAYS[i],dt=dayDate(i);
+  view.innerHTML=`<button class="back" id="bk">← Alle Tage</button>
+  <section class="card"><div class="sub">Tag ${i+1} von ${DAYS.length} · ${fmt(dt)}2026 · ≈ ${d.min} Min.</div><h2>${d.focus}</h2></section>
+  <section class="card learn"><h3>📘 Lernen</h3>${d.learn}</section><div id="parts"></div>
+  <section class="card"><button class="btn" id="fin">Session abschließen ✓</button> <span class="sub" id="finmsg"></span></section>
+  <div class="score" id="sc">Bereit</div>`;
+  $('#bk').onclick=()=>{location.hash='';renderPlan();scrollTo(0,0);};
+  const parts=$('#parts');const tally={};
+  const upd=()=>{let s=0,t=0;Object.values(tally).forEach(v=>{s+=v[0];t+=v[1];});$('#sc').textContent=t?`${s} / ${t} richtig`:'Bereit';return [s,t];};
+  if(d.review){
+    const sec=document.createElement('section');sec.className='card';
+    const mcW=S.wrong.filter(w=>w.type==='mc'), gapW=S.wrong.filter(w=>w.type==='gap');
+    sec.innerHTML=`<h3>🔁 Deine Fehler (${S.wrong.length})</h3>`+(S.wrong.length?'':'<p class="sub">Noch keine Fehler gespeichert. Super, oder du hast die Tage noch nicht gemacht.</p>');
+    parts.appendChild(sec);
+    if(mcW.length){const c=document.createElement('div');sec.appendChild(c);mcBlock(c,mcW.map(w=>w.q),i,'rev',(s,a,t)=>{tally.rev=[s,t];upd();});}
+    if(gapW.length){const l=document.createElement('div');l.innerHTML='<h3 style="margin-top:14px">Fehler aus den Probetests</h3><ol>'+gapW.map(w=>`<li><b>${w.label}:</b> ${w.correct} · ${w.ex}</li>`).join('')+'</ol>';sec.appendChild(l);}
+    if(S.wrong.length){const b=document.createElement('button');b.className='btn ghost';b.textContent='Fehlerliste leeren (alles gelernt)';b.onclick=()=>{S.wrong=[];save();renderDay(i);};sec.appendChild(b);}
+  }
+  if(d.q.length){const sec=document.createElement('section');sec.className='card';sec.innerHTML='<h3>✏️ Übungen</h3>';parts.appendChild(sec);
+    mcBlock(sec,d.q,i,'d'+i,(s,a,t)=>{tally.mc=[s,t];upd();});}
+  if(d.mock){const sec=document.createElement('section');sec.className='card';parts.appendChild(sec);
+    mockBlock(sec,d.mock,i,(s,t)=>{tally.mock=[s,t];upd();});}
+  if(d.official){const sec=document.createElement('section');sec.className='card';sec.innerHTML='<h3>📄 Antworten eintragen (Items 46–57)</h3>';parts.appendChild(sec);
+    OFFICIAL.forEach((o,k)=>{const w=document.createElement('div');w.className='g2';
+      let h=`<b>${o.name}</b><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">`;
+      o.ans.forEach((a,n)=>{const opts=n<6?L:'abc';h+=`<label style="display:inline-block">${46+n} <select data-n="${n}"><option value="">…</option>${[...opts].map(x=>`<option>${x}</option>`).join('')}</select></label>`;});
+      h+=`</div><button class="btn">Prüfen</button><div class="result"></div>`;w.innerHTML=h;sec.appendChild(w);
+      w.querySelector('.btn').onclick=()=>{let s=0;w.querySelectorAll('select').forEach(x=>{const ok=x.value===o.ans[+x.dataset.n];x.classList.remove('right','wrong');x.classList.add(ok?'right':'wrong');if(ok)s++;});
+        w.querySelector('.result').textContent=`Ergebnis: ${s} / 12 · Lösung: `+o.ans.map((a,n)=>(46+n)+a).join(' ');tally['o'+k]=[s,12];upd();};});}
+  if(d.flash){const sec=document.createElement('section');sec.className='card';
+    sec.innerHTML='<h3>🃏 Karteikarten · klick zum Umdrehen</h3><div class="flash">'+PHRASES.map(p=>`<button data-de="${p[0]}" data-en="${p[1]}">${p[0]}</button>`).join('')+'</div>'+
+    `<h3 style="margin-top:18px">✅ Checkliste für morgen</h3><ul class="check">${['Ausweis / Pass und Einladung einpacken','Zwei Kugelschreiber + Bleistift + Radiergummi','Uhr ohne Smartwatch-Funktion','Sprachbausteine: max. 10 Minuten, dann Forumsbeitrag','Keine Lücke leer lassen (keine Minuspunkte)','Teil 1: zuerst Verbposition prüfen','Teil 2: Verb/Präposition neben der Lücke entscheidet'].map(t=>`<li><label><input type="checkbox"> ${t}</label></li>`).join('')}</ul>`;
+    parts.appendChild(sec);sec.querySelectorAll('.flash button').forEach(b=>b.onclick=()=>{b.classList.toggle('flip');b.textContent=b.classList.contains('flip')?b.dataset.en:b.dataset.de;});}
+  $('#fin').onclick=()=>{const [s,t]=upd();S.done[i]={s:t?`${s}/${t}`:'',at:Date.now()};save();$('#finmsg').textContent='Gespeichert! Bis morgen.';};
+  if(S.done[i]) $('#finmsg').textContent='Schon erledigt'+(S.done[i].s?' ('+S.done[i].s+')':'')+'. Du kannst die Session wiederholen.';
+}
+
+function renderExam(){
+  view.innerHTML=`<button class="back" id="bk">← Alle Tage</button><section class="card"><div class="sub">${fmt(EXAM)}2026</div><h2>Prüfungstag</h2>
+  <p>Heute keine Übungen. Frühstücken, rechtzeitig losfahren, ruhig bleiben.</p>
+  <div class="tip"><b>Sprachbausteine im Kopf:</b><br>Teil 1: Verb am Ende → Konjunktion · Verb danach → Adverb · Nomen → Präposition.<br>Teil 2: Das Verb oder die Präposition neben der Lücke entscheidet.<br>Max. 10 Minuten. Keine Lücke leer lassen.</div>
+  <p><b>Viel Erfolg, Fatema! Du schaffst das. 💪</b></p></section>`;
+  $('#bk').onclick=()=>{location.hash='';renderPlan();};
+}
+
+/* ---------- cheat sheet ---------- */
+function renderCheat(){
+  view.innerHTML=`<section class="card"><h2>Spickzettel</h2><p class="sub">12 Lücken · 0,5 Punkte pro Lücke · 6 Punkte für Schreiben · max. 10 Minuten</p>
+  <h3>Teil 1: Was steht nach der Lücke?</h3>
+  <table><tr><th>Nach der Lücke</th><th>Worttyp</th><th>Wörter</th></tr>
+  <tr><td>Verb am <b>Ende</b></td><td>Konjunktion</td><td>da, weil, ob, wann, sobald, seitdem, sodass, obwohl, damit, falls, bevor</td></tr>
+  <tr><td>Verb <b>direkt danach</b></td><td>Adverb</td><td>daher, deshalb, trotzdem, außerdem, inzwischen, danach, seitdem</td></tr>
+  <tr><td>normale Wortstellung</td><td>denn, aber, oder, und</td><td>…, denn ich arbeite …</td></tr>
+  <tr><td>Nomen mit Artikel</td><td>Präposition</td><td>aufgrund, wegen, trotz, innerhalb, während, seit, ab, bis, zwischen</td></tr>
+  <tr><td>Adjektiv</td><td>Verstärkung</td><td>sehr, besonders, zu</td></tr>
+  <tr><td>Verb + Präposition</td><td>da(r)-Wort</td><td>dafür, darauf, darüber, darum, daran, damit</td></tr>
+  <tr><td>Paar</td><td>Doppelkonjunktion</td><td>sowohl…als auch · weder…noch · entweder…oder · zwar…aber · je…desto</td></tr></table>
+  <h3 style="margin-top:18px">Teil 2: feste Ausdrücke</h3><input class="filter" id="flt" placeholder="Suchen … (z. B. Frist, invoice)">
+  <table id="ph"><tr><th>Ausdruck</th><th>English</th></tr>${PHRASES.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td></tr>`).join('')}</table></section>`;
+  $('#flt').oninput=e=>{const v=e.target.value.toLowerCase();view.querySelectorAll('#ph tr').forEach((r,k)=>{if(k)r.style.display=r.textContent.toLowerCase().includes(v)?'':'none';});};
+}
+
+/* ---------- tabs + routing ---------- */
+$('#tPlan').onclick=()=>{$('#tPlan').classList.add('on');$('#tCheat').classList.remove('on');location.hash='';renderPlan();};
+$('#tCheat').onclick=()=>{$('#tCheat').classList.add('on');$('#tPlan').classList.remove('on');location.hash='spickzettel';renderCheat();};
+function route(){const h=location.hash.slice(1);const m=h.match(/^tag-(\d+)$/);
+  if(m&&+m[1]>=1&&+m[1]<=DAYS.length)renderDay(+m[1]-1);else if(h==='pruefung')renderExam();else if(h==='spickzettel'){$('#tCheat').click();}else renderPlan();}
+route();
 </script>
 </body>
 </html>
