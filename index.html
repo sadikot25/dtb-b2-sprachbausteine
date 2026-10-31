@@ -91,14 +91,32 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 20px 40px}
   <div class="tabs"><button id="tPlan" class="on">Tagesplan</button><button id="tHard">Schwere Übungen</button><button id="tCheat">Spickzettel</button></div>
   <div id="view"></div>
 </main>
-<footer>DTB B2 Vorbereitung · Fortschritt wird nur in diesem Browser gespeichert.</footer>
+<footer>DTB B2 Vorbereitung · <span id="sync">Fortschritt wird in diesem Browser gespeichert.</span></footer>
 
 <script>
 /* ---------- storage ---------- */
 const KEY='dtb-sb-v1';
 let S={done:{},scores:{},wrong:[]};
 try{const r=localStorage.getItem(KEY); if(r) S=Object.assign(S,JSON.parse(r));}catch(e){}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+let cloud=null,saveT=null;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}
+  if(cloud){clearTimeout(saveT);saveT=setTimeout(()=>{cloud.set({json:JSON.stringify(S),at:Date.now()}).catch(()=>{});},800);}}
+/* cloud sync (only on claude.ai; GitHub version uses this browser only) */
+(async()=>{try{
+  if(!window.claude||!claude.use)return;
+  const db=await claude.use('db'),user=await claude.use('user');if(!db||!user)return;
+  const id=await user.id();if(!id)return;
+  const ref=db.doc('data/users/'+id+'/state');
+  const timeout=new Promise(r=>setTimeout(()=>r(null),10000));
+  const snap=await Promise.race([ref.get(),timeout]);
+  cloud=ref;
+  const remote=snap&&(snap.data?snap.data():snap);
+  if(remote&&remote.json){const r=JSON.parse(remote.json);
+    if(Object.keys(r.done||{}).length>=Object.keys(S.done).length||r.wrong.length>=S.wrong.length){S=Object.assign({done:{},scores:{},wrong:[]},r);try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}route();}
+    else save();}
+  else if(Object.keys(S.done).length||S.wrong.length) save();
+  const st=document.getElementById('sync');if(st)st.textContent='☁️ Fortschritt wird auf allen Geräten synchronisiert.';
+}catch(e){}})();
 
 /* ---------- dates ---------- */
 const START=new Date(2026,9,28), EXAM=new Date(2026,10,13);
